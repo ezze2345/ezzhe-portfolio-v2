@@ -84,13 +84,15 @@ nav .navlink{font-size:0}nav .navlink::after{font-size:12px}nav .navlink[href="#
 .detail-body strong{font-size:14px;font-weight:500}
 .detail-showcase{max-width:1200px;margin:28px auto 0;display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
 .detail-showcase img{width:100%;height:520px;object-fit:cover;border-radius:28px;border:1px solid hsl(var(--stroke))}
+.detail-image-frame{display:block;width:100%;margin:0;overflow:hidden;background:#f3f3f3}
+.detail-image-frame img{display:block;width:100%;height:100%;object-fit:cover}
 .detail-video{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:0;background:#111}
 .detail-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .detail-next{max-width:1200px;margin:40px auto 0;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #fff2;padding-top:34px;color:#fff;text-decoration:none;font-size:22px}
 .detail-next em{font:italic 40px 'Instrument Serif'}
 @media(max-width:768px){.project-detail{padding:96px 18px 56px}.detail-hero{min-height:560px;padding:28px;border-radius:24px}.detail-body,.detail-showcase{grid-template-columns:1fr}.detail-showcase img{height:340px}.detail-next{align-items:flex-start;flex-direction:column;gap:12px}.detail-next em{font-size:34px}}
 .detail-showcase{display:flex!important;flex-direction:column!important;gap:20px!important}
-.detail-showcase img{height:auto!important;aspect-ratio:auto!important;border-radius:0!important;border:0!important;display:block}
+.detail-showcase img{height:auto!important;aspect-ratio:auto!important;border-radius:0!important;border:0!important;display:block}.detail-image-frame img{height:100%!important}
 @media(max-width:768px){.detail-showcase{gap:20px!important}.detail-showcase img{height:auto!important;border-radius:0!important}}
 .detail-back{position:fixed!important;top:112px!important;left:max(32px,calc((100vw - 1200px)/2 + 48px))!important;z-index:80!important}.detail-reveal>.detail-back{animation:none!important;opacity:1;transform:none!important}
 .journal::before{content:'→';position:absolute;right:18px;top:50%;color:#fff;font-size:20px;font-weight:700;line-height:1;opacity:0;transform:translate(12px,-50%);transition:opacity .35s ease,transform .35s ease;pointer-events:none}
@@ -177,13 +179,14 @@ nav .navlink{font-size:0}nav .navlink::after{font-size:12px}nav .navlink[href="#
 nav .navlink[href="#contact"]::after{content:'联系我'}
 nav .navlink[href="#resume"]::after{content:'简历'}
 nav .navlink[href="#contact"]::after{content:'关于我'}
-.project-detail .detail-showcase img:first-child{display:none}
+.project-detail .detail-showcase>.detail-image-frame:first-of-type{display:none}
 nav .navlink[href="#concept"]::after{content:'往期设计'}
 nav .navlink[href^="mailto"]::after{content:'联系我'}
- .detail-showcase img[src*="project-washer"]{display:block!important}
-.detail-showcase img[src*="project-midea"]{display:block!important}
-.detail-showcase img[src*="project-qinyuan"]{display:block!important}
-.detail-showcase img[src*="project-zhonghai"]{display:block!important}
+ .detail-showcase .detail-image-frame:has(img[src*="project-washer"]){display:block!important}
+.detail-showcase .detail-image-frame:has(img[src*="project-midea"]){display:block!important}
+.detail-showcase .detail-image-frame:has(img[src*="project-qinyuan"]){display:block!important}
+.detail-showcase .detail-image-frame:has(img[src*="project-zhonghai"]){display:block!important}
+.detail-showcase .detail-image-frame:has(img[src*="project-otis/01.webp"]){display:block!important}
 footer#contact h2{font-size:40px}
 @media(min-width:768px){footer#contact h2{font-size:76px}}
 nav .navlink[href="#about"]::after{content:'关于我'}
